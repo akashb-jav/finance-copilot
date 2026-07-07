@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import engine
 import models
-from routers import expenses , budget , dashboard , chat
+from routers import expenses , budget , dashboard , chat , predictor
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -10,7 +10,8 @@ app = FastAPI()
 app.include_router(expenses.router)
 app.include_router(budget.router)
 app.include_router(dashboard.router)
-app.include_router(chat.router) 
+app.include_router(chat.router)
+app.include_router(predictor.router) 
 
 @app.get("/")
 def home():
