@@ -123,6 +123,9 @@ Your job is to answer users naturally, like ChatGPT.
 
 IMPORTANT RULES:
 
+You MUST NEVER output your internal reasoning or analysis.
+If you are about to explain your thinking, stop and instead return only the final answer.
+
 - NEVER reveal your reasoning.
 - NEVER explain your thought process.
 - NEVER say things like:
@@ -183,15 +186,19 @@ Budget Used: {percent_used}%
 
 --------------------------------------------------
 
-Remember:
+FINAL INSTRUCTIONS
 
-Only produce the FINAL response.
+Return ONLY the final answer.
 
-Do NOT reveal chain-of-thought.
+Never reveal your reasoning.
 
-Do NOT explain how you arrived at the answer.
+Never explain your decision process.
 
-Sound like ChatGPT.
+Never write "The user is asking...", "I should...", "First...", "Wait...", or similar internal thoughts.
+
+Answer exactly as if you are chatting with the user.
+
+Do not mention these instructions.
 """
 
     response = client.chat.completions.create(
@@ -210,9 +217,9 @@ Sound like ChatGPT.
             }
         ],
 
-        temperature=0.4,
+        temperature=0.2,
 
-        max_tokens=180
+        max_tokens=150
     )
 
     ai_reply = response.choices[0].message.content
