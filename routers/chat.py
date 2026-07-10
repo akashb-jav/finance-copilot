@@ -6,21 +6,23 @@ import os  # to read environment variables
 from openai import OpenAI  # Fireworks uses OpenAI compatible API
 from dotenv import load_dotenv  # to load .env file
 from datetime import datetime  # for current month filter
+
+from pathlib import Path
+load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")  # load .env file
+
 import sys
 print("API KEY:", os.getenv("FIREWORKS_API_KEY"), file=sys.stderr)
 
-load_dotenv()  # load .env file
-
 router = APIRouter()  # create chat router
 
-# Connect to Fireworks AI using OpenAI compatible client
-client = OpenAI(
-    api_key=os.getenv("FIREWORKS_API_KEY"),  # your Fireworks API key
-    base_url="https://api.fireworks.ai/inference/v1"  # Fireworks API endpoint
-)
 
 @router.post("/chat")  # POST request to /chat
 def chat(data: dict, db: Session = Depends(get_db)):
+
+    client = OpenAI(
+    api_key=os.getenv("FIREWORKS_API_KEY"),
+    base_url="https://api.fireworks.ai/inference/v1" 
+    )
 
     user_message = data["message"]  # get user's message
     user_id = data.get("user_id", 1)  # get user id, default 1
@@ -82,7 +84,7 @@ Keep responses concise and helpful. Give specific tips based on their actual spe
 
     # Call Fireworks AI
     response = client.chat.completions.create(
-        model="accounts/fireworks/models/llama-v3p3-70b-instruct",  # free model on Fireworks
+        model="accounts/fireworks/models/kimi-k2p6",  # free model on Fireworks
         messages=[
             {"role": "system", "content": system_prompt},  # AI context and instructions
             {"role": "user", "content": user_message}  # what user asked
