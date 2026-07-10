@@ -222,28 +222,10 @@ Do not mention these instructions.
         max_tokens=150
     )
 
+    print(response.model_dump(), flush=True)
+
     ai_reply = response.choices[0].message.content
 
-
-bad_phrases = [
-    "The user is asking",
-    "I should",
-    "First I need",
-    "Wait",
-    "Looking at",
-    "My reasoning",
-    "Let me think",
-    "Thought:",
-    "Reasoning:"
-]
-
-for phrase in bad_phrases:
-    if phrase in ai_reply:
-        ai_reply = ai_reply.split(phrase)[0].strip()
-        break
-
-if not ai_reply:
-    ai_reply = "Sorry, I couldn't generate a proper response. Please try asking again."
     
 
     return {
