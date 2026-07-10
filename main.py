@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from database import engine
 import models
 from routers import expenses , budget , dashboard , chat , predictor , shopping
@@ -7,6 +8,17 @@ from routers import expenses , budget , dashboard , chat , predictor , shopping
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # allows all methods (GET, POST etc)
+    allow_headers=["*"],  # allows all headers
+)
+
+
+
 app.include_router(expenses.router)
 app.include_router(budget.router)
 app.include_router(dashboard.router)
