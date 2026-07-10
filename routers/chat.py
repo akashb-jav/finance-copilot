@@ -25,6 +25,7 @@ def chat(data: dict, db: Session = Depends(get_db)):
     )
 
     user_message = data.get("message", "")
+    print("USER MESSAGE:", user_message)
     user_id = data.get("user_id", 1)
 
     current_month = datetime.utcnow().strftime("%Y-%m")
