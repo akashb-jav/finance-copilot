@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Copilot — FinanceAI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/cards.css" />
+  <link rel="stylesheet" href="../../css/animations.css" />
+  <link rel="stylesheet" href="../../css/home.css" />
+  <link rel="stylesheet" href="../../css/navbar.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../../index.html" class="back-link">← Back</a>
+    <span class="logo">FinanceAI</span>
+  </nav>
+
+  <div class="page-shell">
+    <div id="particle-bg"></div>
+
+    <main class="page-content home-hero">
+      <h1 class="fade-rise">Finance Copilot</h1>
+      <p class="fade-rise fade-rise-delay-1 home-tagline">
+        Pick the mode that matches your life — the dashboard adjusts its categories to fit.
+      </p>
+
+      <div class="triangle-grid fade-rise fade-rise-delay-2">
+        <div class="glass-card float float-delay-1" data-mode="student">
+          <h3>Student</h3>
+          <p>Food, transport, college costs, and everything in between.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+
+        <div class="glass-card float float-delay-2" data-mode="working">
+          <h3>Working Professional</h3>
+          <p>Rent, bills, investments — the full picture of a working income.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+
+        <div class="glass-card float float-delay-3" data-mode="personal">
+          <h3>Personal</h3>
+          <p>Household expenses like groceries, utilities, and upkeep.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="transition-overlay"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/all@3/tsparticles.all.bundle.min.js"></script>
+  <script src="../../js/background.js"></script>
+  <script src="../../js/tilt.js"></script>
+
+  <script>
+    // this page's cards route to different destinations than the home page,
+    // so navigation.js reads this instead of its built-in default map
+    window.PAGE_ROUTES = {
+      student: "student.html",
+      working: "working.html",
+      personal: "personal.html",
+    };
+  </script>
+  <script src="../../js/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Finance Assistant</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/cards.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/navbar.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="logo">FinanceAI</span>
+  </nav>
+
+  <div class="page-shell">
+    <div id="particle-bg"></div>
+
+    <main class="page-content home-hero">
+      <h1 class="fade-rise">FinanceAI</h1>
+      <p class="fade-rise fade-rise-delay-1 home-tagline">
+        One assistant for your money, your purchases, and what's coming next.
+      </p>
+
+      <div class="triangle-grid fade-rise fade-rise-delay-2">
+        <div class="glass-card float float-delay-1" data-mode="finance">
+          <h3>Finance Copilot</h3>
+          <p>Track budgets, log expenses, and see where your money's going.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+
+        <div class="glass-card float float-delay-2" data-mode="shopping">
+          <h3>Shopping Assistant</h3>
+          <p>Compare products and know whether now's the time to buy.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+
+        <div class="glass-card float float-delay-3" data-mode="predictor">
+          <h3>Smart Predictor</h3>
+          <p>See where your balance is headed before you get there.</p>
+          <button class="get-started-btn">Get Started</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="transition-overlay"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/all@3/tsparticles.all.bundle.min.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>

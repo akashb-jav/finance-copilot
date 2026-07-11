@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Predictor — FinanceAI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+ <link rel="stylesheet" href="../../css/style.css" />
+<link rel="stylesheet" href="../../css/cards.css" />
+<link rel="stylesheet" href="../../css/animations.css" />
+<link rel="stylesheet" href="../../css/finance.css" />
+<link rel="stylesheet" href="../../css/predictor.css" />
+<link rel="stylesheet" href="../../css/navbar.css" />
+<link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../../index.html" class="back-link">← Back</a>
+    <span class="logo">FinanceAI</span>
+  </nav>
+
+  <div class="page-shell">
+    <div id="particle-bg"></div>
+
+    <main class="page-content dashboard-shell">
+      <div class="dashboard-header fade-rise">
+        <h1>Smart Predictor</h1>
+        <p>Where your balance is headed, based on what's in Finance Copilot.</p>
+      </div>
+
+<div class="predictor-grid fade-rise fade-rise-delay-1">
+  <div class="glass-card">
+    <h3>Alerts</h3>
+    <div id="alerts-list">
+      <div class="alert-item">
+        <span class="alert-dot"></span>
+        <span>No alerts yet — this fills in once you have expense data.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card">
+    <h3>AI Saving Tips</h3>
+    <div class="tips-list" id="tips-list">
+      <div class="tip-item">Tips will appear here once there's spending data to learn from.</div>
+    </div>
+  </div>
+</div>
+
+<div class="glass-card fade-rise fade-rise-delay-2" style="margin-top: 2rem;">
+  <h3>Spending Insights</h3>
+  <p class="forecast-caption" id="forecast-caption">Add expenses in Finance Copilot to see predictions here.</p>
+  <div class="pie-section" id="pie-section">
+    <canvas id="spending-pie" width="200" height="200"></canvas>
+    <div class="pie-legend" id="pie-legend">
+      <p class="comparison-empty">No spending data yet.</p>
+    </div>
+  </div>
+</div>
+    </main>
+  </div>
+
+  <div class="transition-overlay"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/all@3/tsparticles.all.bundle.min.js"></script>
+<script src="../../js/background.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/charts.js"></script>
+<script src="../../js/predictor.js"></script>
+</body>
+</html>

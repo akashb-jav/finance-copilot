@@ -1,0 +1,94 @@
+.dashboard-shell {
+  min-height: 100vh;
+  padding: 3rem 1.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-header h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.dashboard-header p {
+  margin-top: 0.5rem;
+  color: var(--cream-dim);
+}
+
+/* budget summary row - a few small glass cards side by side */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.summary-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.summary-card .label {
+  font-size: 0.85rem;
+  color: var(--cream-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.summary-card .value {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  margin-top: 0.4rem;
+}
+
+.edit-budget-btn {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--cream-dim);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  transition: color var(--fast) ease, border-color var(--fast) ease;
+}
+
+.edit-budget-btn:hover {
+  color: var(--cream);
+  border-color: var(--cream-dim);
+}
+
+/* main dashboard body - form + list on one side, chat on the other */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.expense-list {
+  margin-top: 2rem;
+}
+
+.expense-list h3 {
+  margin-bottom: 1rem;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.95rem;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-item .category {
+  color: var(--cream-dim);
+  font-size: 0.85rem;
+}

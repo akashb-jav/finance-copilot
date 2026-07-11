@@ -1,0 +1,113 @@
+.search-row {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+
+.search-row input {
+  flex: 1;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--cream);
+  font-size: 0.95rem;
+}
+
+.search-row button {
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--clay-900);
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.product-card .product-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.product-card .product-price {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+}
+
+.product-card .product-meta {
+  font-size: 0.85rem;
+  color: var(--cream-dim);
+}
+
+.product-card .compare-btn {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  color: var(--cream);
+}
+
+.product-card .compare-btn.is-selected {
+  background: var(--accent);
+  color: var(--clay-900);
+  border-color: transparent;
+}
+
+.comparison-section {
+  margin-bottom: 2.5rem;
+}
+
+.comparison-section h3 {
+  margin-bottom: 1rem;
+}
+
+.comparison-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.comparison-empty {
+  color: var(--cream-dim);
+  font-size: 0.9rem;
+}
+
+/* buy / wait recommendation */
+.recommendation-card {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.recommendation-card .verdict {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.recommendation-card .verdict.buy {
+  color: #B7E4C7;
+}
+
+.recommendation-card .verdict.wait {
+  color: var(--accent);
+}
+
+.recommendation-card .verdict-reason {
+  font-size: 0.9rem;
+  color: var(--cream-dim);
+}

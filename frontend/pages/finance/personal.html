@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Dashboard — FinanceAI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+<link rel="stylesheet" href="../../css/cards.css" />
+<link rel="stylesheet" href="../../css/animations.css" />
+<link rel="stylesheet" href="../../css/finance.css" />
+<link rel="stylesheet" href="../../css/forms.css" />
+<link rel="stylesheet" href="../../css/chatbot.css" />
+<link rel="stylesheet" href="../../css/navbar.css" />
+<link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body data-finance-mode="personal">
+
+  <nav class="navbar">
+    <a href="finance.html" class="back-link">← Back</a>
+    <span class="logo">FinanceAI</span>
+  </nav>
+
+  <div class="page-shell">
+    <div id="particle-bg"></div>
+
+    <main class="page-content dashboard-shell">
+      <div class="dashboard-header fade-rise">
+        <h1>Personal Dashboard</h1>
+        <p>Groceries, utilities, and everything that keeps the household running.</p>
+      </div>
+
+      <div class="summary-row fade-rise fade-rise-delay-1">
+        <div class="glass-card summary-card">
+          <div class="label">Monthly Budget</div>
+          <div class="value" id="budget-value">₹30,000</div>
+          <button class="edit-budget-btn" id="edit-budget-btn">Edit</button>
+        </div>
+        <div class="glass-card summary-card">
+          <div class="label">Spent</div>
+          <div class="value" id="spent-value">₹19,400</div>
+        </div>
+        <div class="glass-card summary-card">
+          <div class="label">Remaining</div>
+          <div class="value" id="remaining-value">₹10,600</div>
+        </div>
+        <div class="glass-card summary-card">
+          <div class="label">Savings</div>
+          <div class="value" id="savings-value">₹4,000</div>
+        </div>
+      </div>
+
+      <div class="dashboard-grid fade-rise fade-rise-delay-2">
+        <div>
+          <div class="glass-card expense-form">
+            <h3>Add an Expense</h3>
+            <div class="form-row">
+              <div style="flex:1;">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" placeholder="₹ 0" />
+              </div>
+              <div style="flex:1;">
+                <label for="category">Category</label>
+                <select id="category">
+                  <option>Groceries</option>
+                  <option>Electricity</option>
+                  <option>Water</option>
+                  <option>Gas</option>
+                  <option>Household</option>
+                  <option>Miscellaneous</option>
+                </select>
+              </div>
+            </div>
+            <button class="submit-btn" id="add-expense-btn">Add Expense</button>
+          </div>
+
+          <div class="glass-card expense-list">
+            <h3>Recent Expenses</h3>
+            <div id="expense-list-items">
+              <div class="expense-item">
+                <span>Weekly groceries <span class="category">· Groceries</span></span>
+                <span>₹2,800</span>
+              </div>
+              <div class="expense-item">
+                <span>Electricity bill <span class="category">· Electricity</span></span>
+                <span>₹1,900</span>
+              </div>
+              <div class="expense-item">
+                <span>Cooking gas refill <span class="category">· Gas</span></span>
+                <span>₹950</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card chat-panel">
+          <h3>Ask your Copilot</h3>
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-bubble from-ai">
+              Hey! Ask me things like "how does this month compare to last month?"
+            </div>
+          </div>
+          <div class="chat-input-row">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="chat-send-btn">Send</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="transition-overlay"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/all@3/tsparticles.all.bundle.min.js"></script>
+<script src="../../js/background.js"></script>
+<script src="../../js/utils.js"></script>
+<script src="../../js/finance.js"></script>
+<script src="../../js/chatbot.js"></script>
+</body>
+</html>

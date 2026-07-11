@@ -1,0 +1,54 @@
+@keyframes float-idle {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+
+.float {
+  animation: float-idle 6s var(--ease-float) infinite;
+}
+
+/* stagger these on the 3 cards so they don't bob in sync */
+.float-delay-1 { animation-delay: 0s; }
+.float-delay-2 { animation-delay: 1.2s; }
+.float-delay-3 { animation-delay: 2.4s; }
+
+@keyframes fade-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-rise {
+  animation: fade-rise var(--slow) var(--ease-expand) both;
+}
+
+.fade-rise-delay-1 { animation-delay: 0.1s; }
+.fade-rise-delay-2 { animation-delay: 0.25s; }
+.fade-rise-delay-3 { animation-delay: 0.4s; }
+
+/* full screen overlay used during page-to-page navigation */
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--clay-900);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--med) var(--ease-expand);
+}
+
+.transition-overlay.is-active {
+  opacity: 0.96;
+  pointer-events: all;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float,
+  .fade-rise {
+    animation: none !important;
+  }
+
+  .glass-card,
+  .transition-overlay {
+    transition: none !important;
+  }
+}
