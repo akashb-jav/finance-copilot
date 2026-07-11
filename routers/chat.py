@@ -219,7 +219,7 @@ Do not mention these instructions.
 
         temperature=0.2,
 
-        max_tokens=150
+        max_tokens=300
     )
 
     print(response.model_dump(), flush=True)
