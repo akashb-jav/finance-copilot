@@ -28,9 +28,10 @@ def get_dashboard(user_id: int, db: Session = Depends(get_db)):  # user_id from 
         if e.date.strftime("%Y-%m") == current_month  # keep only this month's expenses
     ]
 
-    # Calculate total budget across all categories
-    total_budget = sum(b.amount for b in budgets)  # add up all budget amounts
+    overall_budget = next((b.amount for b in budgets if b.category.lower() == "overall"), 0)
+    total_budget = overall_budget
 
+    
     # Calculate total spent across all expenses this month
     total_spent = sum(e.amount for e in monthly_expenses)  # add up all expense amounts
 
