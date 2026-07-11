@@ -224,31 +224,10 @@ Do not mention these instructions.
 
     print(response.model_dump(), flush=True)
 
-    ai_reply = response.choices[0].message.content or ""
+    
 
-    # Remove reasoning if the model leaks it
-    bad_phrases = [
-        "The user is asking",
-        "I need to",
-        "I should",
-        "Looking at",
-        "First I need",
-        "Wait,",
-        "Thinking",
-        "Current financial status:",
-        "I will",
-        "Let me"
-    ]
+    ai_reply = response.choices[0].message.content or "Sorry, I couldn't generate a response."
 
-    for phrase in bad_phrases:
-        if phrase in ai_reply:
-            ai_reply = ai_reply.split(phrase)[0].strip()
-
-    if not ai_reply:
-        ai_reply = (
-            "I'm sorry, I couldn't generate a proper response. "
-            "Please try asking again."
-        )
 
     return {
         "reply": ai_reply,
